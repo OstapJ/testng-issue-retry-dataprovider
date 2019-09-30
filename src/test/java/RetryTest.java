@@ -18,7 +18,5 @@ public class RetryTest {
         if(counter.get() == 2){
             assert value.isEmpty();
         }
-
     }
-
 }

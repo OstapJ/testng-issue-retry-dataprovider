@@ -8,10 +8,6 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/**
- * Provides retry mechanism for the Failed tests.
- * Currently supports only the tests which doesn't have DataProvider/Parameters annotation.
- */
 public class RetryImpl implements IRetryAnalyzer {
     private static final Logger LOG = LoggerFactory.getLogger(RetryImpl.class);
     private final Map<Integer, AtomicInteger> counts = new ConcurrentHashMap<>();
@@ -24,14 +20,6 @@ public class RetryImpl implements IRetryAnalyzer {
             count = new AtomicInteger(3);
             counts.put(id, count);
         }
-
-        LOG.debug("UniqueId '{}'\nRetry count is '{}'\nInvocationCount is '{}'\nParameterInvocationCount is " +
-                "'{}'\nThread id '{}'",
-                id,
-            count.get(),
-            result.getMethod().getInvocationCount(), result.getMethod().getParameterInvocationCount(),
-            Thread.currentThread().getId());
-
         return count;
     }
 

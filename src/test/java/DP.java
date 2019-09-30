@@ -5,7 +5,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class DP {
     private static AtomicInteger counter = new AtomicInteger();
 
-
     @DataProvider
     public static Object[][] dpWithException() {
         return new Object[][]{
@@ -15,6 +14,7 @@ public class DP {
 
     private static String foo(){
         counter.getAndIncrement();
+
         if(counter.get() == 1){
             return "First";
         }
@@ -22,7 +22,5 @@ public class DP {
             return "Second";
         }
         throw new RuntimeException("TestNG doesn't handle an exception");
-
     }
-
 }
