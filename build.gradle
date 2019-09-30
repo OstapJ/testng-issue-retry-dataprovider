@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group 'com.github'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.testng:testng:7.0.0'
+    compile 'org.slf4j:slf4j-log4j12:1.7.25'
+}
+
+tasks.withType(Test) {
+    useTestNG() {
+        //set TestNG output dir
+        outputDirectory = file("$project.buildDir/testngOutput")
+        //required to turn on TestNG reports
+        useDefaultListeners = true
+        reports.html.enabled = false
+        if (project.hasProperty('GROUPS')) {
+            includeGroups = findProperty('GROUPS').split(';')
+        }
+    }
+    include(findProperty('INCLUDE') ?: '**/*Test.*')
+}

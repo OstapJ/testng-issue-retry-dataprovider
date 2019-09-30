@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Retry Suite">
+
+
+    <test verbose="1" name="Retry Test">
+        <classes>
+            <class name="RetryTest"/>
+        </classes>
+    </test>
+
+
+</suite>
