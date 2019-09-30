@@ -1,0 +1,61 @@
+# IntelliJ project files
+.idea/*
+*/.idea
+*.iml
+*.txt
+*.ipr
+*.iws
+out
+gen
+
+# Packaged files
+*.app
+*.apk
+*.zip
+*.jar
+*.war
+*.ear
+*.tar.gz
+*.rar
+*.ipa
+
+# Mac
+.DS_Store
+
+# Java class files
+*.class
+
+# Gradle files
+.gradle/
+build/
+local.properties
+
+# Maven
+target
+
+#allure
+.allure
+allure-results
+
+# Log Files
+*.log
+
+# Credentials
+**/src/main/**/credentials.properties
+
+# Test output files
+**/test-output
+source-reports/
+
+# Temp Files
+**/*.tmp
+
+**/mappings/*.json
+**/src/main/resources/mock-servers
+
+# Excepltions
+!**/idevice-version-map.txt
+!**/2019-01-18T14-23-26.tar.gz
+!.idea/codeStyles
+!.idea/runConfigurations
+!.jenkins/mobile/build
